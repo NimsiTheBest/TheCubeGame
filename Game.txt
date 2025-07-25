@@ -1,0 +1,52 @@
+Let's make a game!
+  name:Test
+  by:FrenzY
+Layout
+   use default
+Buttons
+*makemoney
+name:Make money
+desc:Click this button to make money!
+on click:yield 1 money
+class:bigButton
+ 
+Resources
+*money
+name:Money
+desc:This is how much money you got!
+ 
+Buildings
+*printer
+name:Printer
+desc:A printer that prints money, cool right?? Generates 1 money per second
+cost:100 money
+on tick:yield 1 money
+tag:build
+ 
+*epicprinter
+name:Epic Printer
+desc:This printer is way faster than the older one! Generates 10 money per second
+cost:1000 money
+on tick:yield 10 money
+req:5 printer:max
+tag:build
+ 
+Upgrades
+*printupgrade
+name:Printer Upgrade
+desc:Makes your printer print money 1.25 times faster!
+cost:500 money
+   passive:multiply money yield of tag:build by 1.25
+req:2 printer
+ 
+Shinies
+*moneybox
+  name:Money Box
+  on click:yield (random(50,500)) money
+  movement:anywhere
+  frequency:60
+ 
+Achievements
+*moneyach
+  name:Money Total 1
+  desc:Earn 100 Money total
