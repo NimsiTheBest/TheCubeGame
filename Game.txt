@@ -1,22 +1,36 @@
 Let's make a game!
-  name:Test
-  by:FrenzY
+  name:The Cube Game
+  by:Nimsi
 Layout
    use default
 Buttons
 *makemoney
 name:Make money
 desc:Click this button to make money!
-on click:yield 1 money
+on click:
+$randomCube=random(1,3)
+if (randomCube=1) yield 1 redcubes
+if (randomCube=2) yield 1 bluecubes
+if (randomCube=3) yield 1 greencubes
+emd
 class:bigButton
  
 Resources
-*money
-name:Money
-desc:This is how much money you got!
- 
+
+*redcubes
+name:Red Cubes
+desc:Red. The colour of love, passion and anger.
+
+*bluecubes
+name:Blue Cubes
+desc:Blue is just a nice colour y'know?
+
+*greencubes
+name:Green Cubes
+desc:Green is like grass.
+
 Buildings
-*printer
+*redcube
 name:Printer
 desc:A printer that prints money, cool right?? Generates 1 money per second
 cost:100 money
